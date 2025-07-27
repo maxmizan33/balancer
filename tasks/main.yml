@@ -1,0 +1,12 @@
+---
+- name: Install HAProxy
+  ansible.builtin.yum:
+    name: haproxy
+    state: present
+
+- name: Start and enable HAProxy
+  ansible.builtin.systemd:
+    name: haproxy
+    state: started
+    enabled: true
+
